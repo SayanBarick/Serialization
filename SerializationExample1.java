@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 class Lt1 implements Serializable
 {
-	int id;
+	transient int id;
 	String name;
 	public Lt1(int id, String name) {
 		super();
@@ -66,6 +66,8 @@ public class SerializationExample1 {
 		{
 			System.out.println(ex.getMessage());
 		}
+		
+		
 		
 
 	}
