@@ -1,6 +1,8 @@
 package GitEample1;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
@@ -51,6 +53,18 @@ public class SerializationExample1 {
 		catch(Exception e)
 		{
 			System.out.println(e.getMessage());
+		}
+		try {
+			FileInputStream fin= new FileInputStream(path);
+			ObjectInputStream oin= new ObjectInputStream(fin);
+			Lt1 obj1=(Lt1)oin.readObject();
+			oin.close();
+			fin.close();
+			System.out.println(obj1);
+		}
+		catch(Exception ex)
+		{
+			System.out.println(ex.getMessage());
 		}
 		
 
